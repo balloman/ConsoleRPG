@@ -8,8 +8,10 @@ namespace ConsoleRPG
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            Move portalBlast = new Move("Portal Blast", 0, 56, 0.3);
+            Console.WriteLine(portalBlast.toString());
         }
     }
 }

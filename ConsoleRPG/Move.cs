@@ -13,12 +13,32 @@ namespace ConsoleRPG
         private int baseDamage;
         private double damageScale;
 
+        public string MoveName {
+            get => moveName;
+            set => moveName = value;
+        }
+
+        public int ManaCost {
+            get => manaCost;
+            set => manaCost = value;
+        }
+
+        public int BaseDamage {
+            get => baseDamage;
+            set => baseDamage = value;
+        }
+
+        public double DamageScale {
+            get => damageScale;
+            set => damageScale = value;
+        }
+
         public Move(string _moveName, int _manaCost, int _baseDamage, double _damageScale)
         {
-            this.moveName = _moveName;
-            this.manaCost = _manaCost;
-            this.baseDamage = _baseDamage;
-            this.damageScale = _damageScale;
+            moveName = _moveName;
+            manaCost = _manaCost;
+            baseDamage = _baseDamage;
+            damageScale = _damageScale;
         }
 
         public int useMove(double addedDamage)
@@ -29,24 +49,9 @@ namespace ConsoleRPG
             return damage;
         }
 
-        public int getBaseDamage()
+        public string toString()
         {
-            return baseDamage;
-        }
-
-        public void setBaseDamage(int _baseDamage)
-        {
-            this.baseDamage = _baseDamage;
-        }
-
-        public double getDamageScale()
-        {
-            return damageScale;
-        }
-
-        public void setDamageScale(int _damageScale)
-        {
-            damageScale = _damageScale;
+            return MoveName + ", costs " + ManaCost + " Mana, " + BaseDamage + " damage, has " + DamageScale + " scaling.";
         }
     }
 }
