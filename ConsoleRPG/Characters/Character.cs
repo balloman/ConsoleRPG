@@ -52,5 +52,17 @@ namespace ConsoleRPG.Characters
         {
             Health -= _damage;
         }
+
+        public string toString()
+        {
+            List<string> moveNames = new List<string>();
+            foreach (Move m in Moveset) {
+                int i = 0;
+                moveNames.Add(m.MoveName);
+                i++;
+            }
+
+            return Name + ", has " + Health + " health, " + Motto + " is their motto. " + "Their moveset is: " + string.Join(", ", moveNames);
+        }
     }
 }

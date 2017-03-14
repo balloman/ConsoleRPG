@@ -12,6 +12,7 @@ namespace ConsoleRPG
         private int manaCost;
         private int baseDamage;
         private double damageScale;
+        private int cooldown;
 
         public string MoveName {
             get => moveName;
@@ -33,15 +34,21 @@ namespace ConsoleRPG
             set => damageScale = value;
         }
 
-        public Move(string _moveName, int _manaCost, int _baseDamage, double _damageScale)
-        {
-            moveName = _moveName;
-            manaCost = _manaCost;
-            baseDamage = _baseDamage;
-            damageScale = _damageScale;
+        public int Cooldown {
+            get => cooldown;
+            set => cooldown = value;
         }
 
-        public int useMove(double addedDamage)
+        public Move(string _moveName, int _manaCost, int _baseDamage, double _damageScale, int _cooldown)
+        {
+            MoveName = _moveName;
+            ManaCost = _manaCost;
+            BaseDamage = _baseDamage;
+            DamageScale = _damageScale;
+            Cooldown = _cooldown;
+        }
+
+        public int damageOutput(double addedDamage)
         {
             int damage;
             double scaledDamage = this.damageScale * addedDamage;
