@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleRPG.Characters
 {
-    class Character
+    abstract class Character
     {
         private int health;
         private string name;

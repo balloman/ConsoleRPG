@@ -37,5 +37,14 @@ namespace ConsoleRPG
         {
             Mana = 750;
         }
+
+        public Player(string _name) : base(1000, _name, "Hey Guys!", new Move[] { new Move("Portal Blast", 0, 56, 0.3, 1),
+                                                                new Move("Cosmic Rift", 100, 100, 0.8, 3),
+                                                                new Move("Tether", 30, 60, 0.6, 2),
+                                                                new Move("Black Hole", 175, 350, 1.2, 7) })
+        {
+            Mana = 750;
+            //Name = _name;
+        }
     }
 }
